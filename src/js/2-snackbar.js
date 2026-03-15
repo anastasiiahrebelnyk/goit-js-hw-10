@@ -25,8 +25,7 @@ refs.formEl.addEventListener('submit', e => {
     }))
         .catch(err => iziToast.show({
             color: 'red',
-            icon: '❌',
-            message: `Rejected promise in ${delay}ms`
+            message: `❌ Rejected promise in ${delay}ms`
     }));
 });
 
