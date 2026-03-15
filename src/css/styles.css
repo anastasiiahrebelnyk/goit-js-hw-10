@@ -37,6 +37,7 @@ body {
 .disabled {
   color: #808080;
   background-color: #fafafa;
+  cursor: not-allowed;
 
 }
 

@@ -28,11 +28,12 @@ const options = {
       if (selectedDates[0] < Date.now()) {
          iziToast.show({
     message: "Please choose a date in the future"
-});
+         });
           return
       }
       userSelectedDate = selectedDates[0].getTime();      
       buttonEl.classList.add('active-button');
+      buttonEl.disabled = false;
       return userSelectedDate;
       
   },
@@ -45,8 +46,9 @@ buttonEl.addEventListener('click', handleTimer);
 
 function handleTimer() {
     buttonEl.classList.remove('active-button');
+    buttonEl.disabled = true;
     inputEl.classList.add('disabled');
-    inputEl.setAttribute('disabled', '');
+    inputEl.disabled = true;
 
     intervalId = setInterval(() => {
         console.log('tick');
@@ -71,7 +73,6 @@ function handleTimer() {
 
         } 
     }, 1000);
-    buttonEl.removeEventListener('click', handleTimer);
 };
 
 
