@@ -25,10 +25,12 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
       console.log(selectedDates[0]);
-      if (selectedDates[0] < Date.now()) {
+      if (selectedDates[0] <= Date.now()) {
          iziToast.show({
     message: "Please choose a date in the future"
          });
+        buttonEl.disabled = true;
+        userSelectedDate = '';
           return
       }
       userSelectedDate = selectedDates[0].getTime();      
@@ -69,7 +71,7 @@ function handleTimer() {
             timerDisplay.seconds.textContent = '00';
             inputEl.classList.remove('disabled');
             inputEl.removeAttribute('disabled', '');
-            buttonEl.addEventListener('click', handleTimer);
+            // buttonEl.addEventListener('click', handleTimer);
 
         } 
     }, 1000);
