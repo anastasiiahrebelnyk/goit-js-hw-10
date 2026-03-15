@@ -30,6 +30,8 @@ const options = {
     message: "Please choose a date in the future"
          });
         buttonEl.disabled = true;
+        buttonEl.classList.remove('active-button');
+
         userSelectedDate = '';
           return
       }
